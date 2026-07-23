@@ -1,0 +1,12 @@
+test.py
+test_clustering.py
+images_extractor.py
+dinov2.py
+annotations.py
+results/
+cropped_products_022/
+cropped_products/
+annotated_images/
+__pycache__/
+annotations_applier.py
+.DS_Store
