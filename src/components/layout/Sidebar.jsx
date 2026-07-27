@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import { HiOutlineChartPie, HiOutlineViewGrid, HiOutlineClipboardList } from 'react-icons/hi';
+import Logo from './Logo.jsx';
 
 const navItems = [
   { label: 'Dashboard', path: '/', icon: HiOutlineChartPie },
@@ -12,7 +13,7 @@ function Sidebar() {
     <aside className="card-glass flex h-full min-h-[calc(100vh-48px)] w-full max-w-[320px] flex-col gap-8 border border-white/10 p-6 shadow-panel lg:sticky lg:top-6">
       <div className="space-y-4">
         <div className="rounded-3xl bg-white/5 px-4 py-3 shadow-sm shadow-black/10">
-          <p className="text-[0.92rem] font-semibold uppercase tracking-[0.26em] text-lavender/90">Retail Shelf Intelligence</p>
+          <Logo compact className="max-w-[210px]" />
         </div>
         <div>
           <p className="text-sm text-muted">Premium AI retail monitoring platform with real-time insights.</p>

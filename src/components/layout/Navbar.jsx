@@ -1,5 +1,3 @@
-import { HiOutlineSparkles } from 'react-icons/hi';
-
 function Navbar() {
   return (
     <header className="card-glass flex flex-col gap-4 border border-white/10 bg-white/5 p-5 shadow-panel md:flex-row md:items-center md:justify-between">
