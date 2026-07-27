@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  font-family: 'Space Grotesk', Inter, system-ui, sans-serif;
+}
+
+html {
+  background: #0b0b12;
+  color: #f8fafc;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #0b0b12;
+  background-image:
+    radial-gradient(circle at top left, rgba(139,92,246,0.16), transparent 28%),
+    radial-gradient(circle at 80% 12%, rgba(196,181,253,0.12), transparent 24%),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='640' viewBox='0 0 640 640'%3E%3Cg fill='none' stroke='rgba(255,255,255,0.04)' stroke-width='1'%3E%3Cpath d='M0 80c96 32 288 96 400 64s192-88 240-96'/%3E%3Cpath d='M0 240c96 32 288 96 400 64s192-88 240-96'/%3E%3Cpath d='M0 400c96 32 288 96 400 64s192-88 240-96'/%3E%3Cpath d='M0 560c96 32 288 96 400 64s192-88 240-96'/%3E%3C/g%3E%3C/svg%3E");
+  background-size: cover;
+}
+
+body, #root {
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: rgba(139,92,246,0.4);
+  color: #fff;
+}
+
+.btn-glow {
+  @apply inline-flex items-center justify-center rounded-full bg-gradient-to-r from-brand to-lavender px-5 py-3 text-sm font-semibold text-white shadow-glow transition-transform duration-300 ease-out hover:-translate-y-0.5 hover:shadow-[0_25px_50px_-30px_rgba(139,92,246,0.8)];
+}
+
+.card-glass {
+  @apply rounded-[24px] border border-white/10 bg-white/5 backdrop-blur-xl shadow-panel transition-all duration-300 ease-out hover:border-white/15 hover:shadow-glow;
+}
+
+.text-muted {
+  color: #b8b8c7;
+}
