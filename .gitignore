@@ -5,8 +5,12 @@ dinov2.py
 annotations.py
 results/
 cropped_products_022/
+cropped_products_025/
 cropped_products/
 annotated_images/
 __pycache__/
 annotations_applier.py
 .DS_Store
+samples/
+results/
+test_misplaced.py
