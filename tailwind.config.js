@@ -1,14 +1,15 @@
 export default {
+  darkMode: 'class',
   content: ['./index.html', './src/**/*.{js,jsx}'],
   theme: {
     extend: {
       colors: {
-        surface: '#171723',
-        panel: '#11111A',
-        bg: '#0B0B12',
+        surface: 'rgb(var(--color-surface) / <alpha-value>)',
+        panel: 'rgb(var(--color-panel) / <alpha-value>)',
+        bg: 'rgb(var(--color-bg) / <alpha-value>)',
+        soft: 'rgb(var(--color-soft) / <alpha-value>)',
+        lavender: 'rgb(var(--color-lavender) / <alpha-value>)',
         brand: '#8B5CF6',
-        lavender: '#C4B5FD',
-        soft: '#F8FAFC',
         success: '#34D399',
         warning: '#F59E0B',
         danger: '#EF4444',
@@ -16,6 +17,7 @@ export default {
       boxShadow: {
         glow: '0 20px 80px rgba(139,92,246,0.14)',
         panel: '0 20px 60px rgba(0,0,0,0.25)',
+        soft: '0 20px 45px rgba(139,92,246,0.14), 0 6px 16px rgba(17,17,26,0.06)',
       },
       borderRadius: {
         '4xl': '24px',

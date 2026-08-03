@@ -16,15 +16,17 @@ function Logo({ compact = false, className = '' }) {
         </svg>
       </div>
       <div className={`min-w-0 ${compact ? 'space-y-1' : 'space-y-1'}`}>
-        <p className={`truncate text-[0.7rem] uppercase tracking-[0.28em] text-white/70 ${compact ? 'text-[0.65rem]' : 'text-xs'}`}>
+        <p className={`truncate text-[0.7rem] uppercase tracking-[0.28em] text-muted ${compact ? 'text-[0.65rem]' : 'text-xs'}`}>
           Retail Shelf
         </p>
-        <p className={`truncate font-semibold text-white ${compact ? 'text-sm' : 'text-lg'}`}>
+        <p className={`truncate font-semibold text-soft ${compact ? 'text-sm' : 'text-lg'}`}>
           Intelligence
         </p>
       </div>
     </div>
   );
 }
+
+
 
 export default Logo;

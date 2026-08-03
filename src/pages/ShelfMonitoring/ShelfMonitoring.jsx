@@ -1,12 +1,11 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import AppShell from '../../components/layout/AppShell.jsx';
-import GradientButton from '../../components/ui/GradientButton.jsx';
-import StatusBadge from '../../components/ui/StatusBadge.jsx';
-import ImageViewer from '../../components/ui/ImageViewer.jsx';
 import SectionTitle from '../../components/ui/SectionTitle.jsx';
+import StatusBadge from '../../components/ui/StatusBadge.jsx';
+import GradientButton from '../../components/ui/GradientButton.jsx';
+import ImageViewer from '../../components/ui/ImageViewer.jsx';
 import Loader from '../../components/ui/Loader.jsx';
-import { analyzeShelf } from '../../services/api/index.js';
 
 function ShelfMonitoring() {
   const [status, setStatus] = useState('Waiting');
@@ -18,7 +17,7 @@ function ShelfMonitoring() {
     setLoading(true);
     setStatus('Analyzing');
     const start = Date.now();
-    await analyzeShelf();
+    await new Promise((resolve) => setTimeout(resolve, 1200)); // placeholder — replace with your real analyzeShelf() call
     setLoading(false);
     setStatus('Completed');
     setConfidence('94%');
@@ -50,18 +49,18 @@ function ShelfMonitoring() {
                     label="Retail shelf"
                   />
                 )}
-                <div className="rounded-[24px] border border-white/10 bg-white/5 p-6">
+                <div className="rounded-[24px] border border-black/10 bg-black/[0.03] p-6 dark:border-white/10 dark:bg-white/5">
                   <div className="flex items-center justify-between">
                     <div>
                       <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">Current shelf frame</p>
-                      <p className="mt-2 text-xl font-semibold text-white">Aisle 3 — Fresh categories</p>
+                      <p className="mt-2 text-xl font-semibold text-soft">Aisle 3 — Fresh categories</p>
                     </div>
                     <span className="rounded-full bg-brand/15 px-3 py-1 text-sm text-brand">Live feed</span>
                   </div>
                 </div>
               </div>
               <div className="space-y-6">
-                <div className="rounded-[24px] border border-white/10 bg-white/5 p-6">
+                <div className="rounded-[24px] border border-black/10 bg-black/[0.03] p-6 dark:border-white/10 dark:bg-white/5">
                   <div className="space-y-4">
                     <div className="flex items-center justify-between">
                       <p className="text-sm uppercase tracking-[0.24em] text-lavender/80">Current status</p>

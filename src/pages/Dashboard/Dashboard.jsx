@@ -50,7 +50,7 @@ function Dashboard() {
               <div className="flex flex-col gap-6">
                 <div>
                   <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">Quick action</p>
-                  <h2 className="mt-3 text-2xl font-semibold text-white">Analyze latest shelf frame</h2>
+                  <h2 className="mt-3 text-2xl font-semibold text-soft">Analyze latest shelf frame</h2>
                 </div>
                 <p className="text-sm leading-7 text-muted">Initiate a new analysis cycle, review current statistics, and keep the shelf environment optimized with AI insights.</p>
                 <GradientButton className="w-full max-w-xs">Analyze Shelf</GradientButton>
@@ -61,7 +61,7 @@ function Dashboard() {
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">System health</p>
-                    <p className="mt-2 text-lg font-semibold text-white">Production readiness</p>
+                    <p className="mt-2 text-lg font-semibold text-soft">Production readiness</p>
                   </div>
                   <span className="rounded-full bg-emerald-400/15 px-3 py-1 text-sm font-semibold text-emerald-300">Stable</span>
                 </div>
@@ -79,24 +79,24 @@ function Dashboard() {
           <div className="card-glass p-8">
             <div className="space-y-4">
               <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">Insights snapshot</p>
-              <h2 className="text-2xl font-semibold text-white">Retail shelf intelligence</h2>
+              <h2 className="text-2xl font-semibold text-soft">Retail shelf intelligence</h2>
               <p className="text-sm leading-7 text-muted">An elegant dashboard view with AI-driven metrics, readiness indicators, and space to track product availability across store shelves.</p>
             </div>
             <div className="mt-8 grid gap-4">
-              <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+              <div className="rounded-[24px] border border-black/10 bg-black/[0.03] p-5 dark:border-white/10 dark:bg-white/5">
                 <div className="flex items-center justify-between gap-4">
                   <div>
                     <p className="text-sm text-muted">Latest scan</p>
-                    <p className="mt-2 text-xl font-semibold text-white">Shelf A1 - Grocery aisle</p>
+                    <p className="mt-2 text-xl font-semibold text-soft">Shelf A1 - Grocery aisle</p>
                   </div>
                   <span className="rounded-full bg-brand/15 px-3 py-1 text-sm text-brand">Verified</span>
                 </div>
               </div>
-              <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+              <div className="rounded-[24px] border border-black/10 bg-black/[0.03] p-5 dark:border-white/10 dark:bg-white/5">
                 <p className="text-sm text-muted">AI activity</p>
                 <div className="mt-3 flex items-center justify-between gap-4">
                   <div>
-                    <p className="text-2xl font-semibold text-white">92%</p>
+                    <p className="text-2xl font-semibold text-soft">92%</p>
                     <p className="text-sm text-muted">Shelf conformity score</p>
                   </div>
                   <div className="rounded-full bg-emerald-400/10 px-3 py-1 text-sm text-emerald-200">Optimal</div>
@@ -109,13 +109,13 @@ function Dashboard() {
             <div className="flex items-center justify-between">
               <div>
                 <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">Daily summary</p>
-                <p className="mt-2 text-xl font-semibold text-white">Shelf detection timeline</p>
+                <p className="mt-2 text-xl font-semibold text-soft">Shelf detection timeline</p>
               </div>
-              <div className="rounded-full bg-white/5 px-4 py-3 text-sm text-muted">Live simulation</div>
+              <div className="rounded-full bg-black/[0.03] px-4 py-3 text-sm text-muted dark:bg-white/5">Live simulation</div>
             </div>
             <div className="mt-8 grid gap-4">
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-4 text-sm text-soft">AI model has processed 98 shelf frames in the last hour.</div>
-              <div className="rounded-3xl border border-white/10 bg-white/5 p-4 text-sm text-soft">Restocking recommendations updated for 12 products.</div>
+              <div className="rounded-3xl border border-black/10 bg-black/[0.03] p-4 text-sm text-soft dark:border-white/10 dark:bg-white/5">AI model has processed 98 shelf frames in the last hour.</div>
+              <div className="rounded-3xl border border-black/10 bg-black/[0.03] p-4 text-sm text-soft dark:border-white/10 dark:bg-white/5">Restocking recommendations updated for 12 products.</div>
             </div>
           </div>
         </div>

@@ -40,13 +40,13 @@ function DetectionResults() {
               <div className="space-y-6">
                 <ImageViewer src={results.image} label="Analyzed shelf" />
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+                  <div className="rounded-[24px] border border-black/10 bg-black/[0.03] p-5 dark:border-white/10 dark:bg-white/5">
                     <p className="text-sm text-muted">Shelf health</p>
-                    <p className="mt-3 text-3xl font-semibold text-white">{results.shelfHealth}%</p>
+                    <p className="mt-3 text-3xl font-semibold text-soft">{results.shelfHealth}%</p>
                   </div>
-                  <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+                  <div className="rounded-[24px] border border-black/10 bg-black/[0.03] p-5 dark:border-white/10 dark:bg-white/5">
                     <p className="text-sm text-muted">Confidence</p>
-                    <p className="mt-3 text-3xl font-semibold text-white">{results.confidence}%</p>
+                    <p className="mt-3 text-3xl font-semibold text-soft">{results.confidence}%</p>
                   </div>
                 </div>
               </div>
@@ -59,34 +59,34 @@ function DetectionResults() {
             <div className="flex items-center justify-between gap-4">
               <div>
                 <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">Detection Summary</p>
-                <h2 className="mt-2 text-2xl font-semibold text-white">Shelf status</h2>
+                <h2 className="mt-2 text-2xl font-semibold text-soft">Shelf status</h2>
               </div>
-              <div className="rounded-full bg-white/5 px-3 py-1 text-sm text-muted">Final review</div>
+              <div className="rounded-full bg-black/[0.03] px-3 py-1 text-sm text-muted dark:bg-white/5">Final review</div>
             </div>
             <div className="mt-6 grid gap-4">
-              <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+              <div className="rounded-[24px] border border-black/10 bg-black/[0.03] p-5 dark:border-white/10 dark:bg-white/5">
                 <div className="flex items-center gap-3">
                   <HiOutlineCheckCircle size={24} className="text-brand" />
                   <div>
-                    <p className="text-sm font-semibold text-white">Healthy</p>
+                    <p className="text-sm font-semibold text-soft">Healthy</p>
                     <p className="text-sm text-muted">{results?.healthy}% of the layout is aligned</p>
                   </div>
                 </div>
               </div>
-              <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+              <div className="rounded-[24px] border border-black/10 bg-black/[0.03] p-5 dark:border-white/10 dark:bg-white/5">
                 <div className="flex items-center gap-3">
                   <HiOutlineSparkles size={24} className="text-warning" />
                   <div>
-                    <p className="text-sm font-semibold text-white">Needs Rearrangement</p>
+                    <p className="text-sm font-semibold text-soft">Needs Rearrangement</p>
                     <p className="text-sm text-muted">{results?.rearrangement}% requires attention</p>
                   </div>
                 </div>
               </div>
-              <div className="rounded-[24px] border border-white/10 bg-white/5 p-5">
+              <div className="rounded-[24px] border border-black/10 bg-black/[0.03] p-5 dark:border-white/10 dark:bg-white/5">
                 <div className="flex items-center gap-3">
                   <HiOutlineShieldCheck size={24} className="text-success" />
                   <div>
-                    <p className="text-sm font-semibold text-white">Detection Confidence</p>
+                    <p className="text-sm font-semibold text-soft">Detection Confidence</p>
                     <p className="text-sm text-muted">A strong AI assessment score</p>
                   </div>
                 </div>
@@ -100,7 +100,7 @@ function DetectionResults() {
               <button
                 type="button"
                 onClick={() => navigate('/')}
-                className="rounded-full border border-white/10 bg-white/5 px-5 py-3 text-sm font-semibold text-white transition hover:bg-white/10"
+                className="rounded-full border border-black/10 bg-black/[0.03] px-5 py-3 text-sm font-semibold text-soft transition hover:bg-black/[0.06] dark:border-white/10 dark:bg-white/5 dark:hover:bg-white/10"
               >
                 Return Dashboard
               </button>
@@ -114,4 +114,4 @@ function DetectionResults() {
   );
 }
 
-export default DetectionResults;
+export default DetectionResults; 
