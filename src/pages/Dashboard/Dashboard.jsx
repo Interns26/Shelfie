@@ -6,7 +6,11 @@ import StatCard from '../../components/ui/StatCard.jsx';
 import GradientButton from '../../components/ui/GradientButton.jsx';
 import SectionTitle from '../../components/ui/SectionTitle.jsx';
 import UploadDropzone from '../../components/ui/UploadDropzone.jsx';
-import { fetchDashboard } from '../../services/api/index.js';
+import ProductList from '../../components/ui/ProductList.jsx';
+import ProgressBar from '../../components/ui/ProgressBar.jsx';
+import StatusBadge from '../../components/ui/StatusBadge.jsx';
+import Loader from '../../components/ui/Loader.jsx';
+import { analyzeShelf, fetchDashboard, fetchResults } from '../../services/api/index.js';
 
 function Dashboard() {
   const [dashboard, setDashboard] = useState(null);
@@ -22,7 +26,11 @@ function Dashboard() {
     if (currentImage) URL.revokeObjectURL(currentImage.previewUrl);
   }, [referenceImage, currentImage]);
 
+  const [analysisLoading, setAnalysisLoading] = useState(false);
+  const [results, setResults] = useState(null);
+
   const handleSelect = (setter) => (file) => {
+    setResults(null);
     setter((prev) => {
       if (prev) URL.revokeObjectURL(prev.previewUrl);
       return { file, previewUrl: URL.createObjectURL(file) };
@@ -30,6 +38,7 @@ function Dashboard() {
   };
 
   const handleClear = (setter) => () => {
+    setResults(null);
     setter((prev) => {
       if (prev) URL.revokeObjectURL(prev.previewUrl);
       return null;
@@ -37,6 +46,23 @@ function Dashboard() {
   };
 
   const readyToCompare = Boolean(referenceImage && currentImage);
+
+  const handleAnalyze = async () => {
+    if (!readyToCompare) return;
+
+    setAnalysisLoading(true);
+    setResults(null);
+
+    try {
+      await analyzeShelf(referenceImage.file, currentImage.file);
+      const fetchedResults = await fetchResults();
+      setResults(fetchedResults);
+    } catch (error) {
+      console.error('Analysis failed', error);
+    } finally {
+      setAnalysisLoading(false);
+    }
+  };
 
   return (
     <AppShell>
@@ -112,10 +138,44 @@ function Dashboard() {
 
             <GradientButton
               className="mt-7 w-full disabled:pointer-events-none disabled:opacity-40"
-              disabled={!readyToCompare}
+              disabled={!readyToCompare || analysisLoading}
+              onClick={handleAnalyze}
             >
-              {readyToCompare ? 'Run shelf comparison' : 'Upload both images to continue'}
+              {analysisLoading
+                ? 'Running shelf comparison...'
+                : readyToCompare
+                ? 'Run shelf comparison'
+                : 'Upload both images to continue'}
             </GradientButton>
+
+            {analysisLoading ? (
+              <div className="mt-6">
+                <Loader label="Analyzing shelf comparison..." />
+              </div>
+            ) : results ? (
+              <div className="mt-6 space-y-6">
+                <div className="card-glass p-8">
+                  <div className="space-y-4">
+                    <div>
+                      <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">Analysis results</p>
+                      <h2 className="text-2xl font-semibold text-soft">Shelf comparison complete</h2>
+                    </div>
+
+                    <ProgressBar label="Shelf Health" value={results.shelfHealth} />
+
+                    <div className="grid gap-4 xl:grid-cols-2">
+                      <ProductList title="Misplaced products" items={results.misplaced} highlight />
+                      <ProductList title="Missing products" items={results.missing} />
+                    </div>
+
+                    <div className="grid gap-4 sm:grid-cols-2">
+                      <StatusBadge label="Confidence" value={`${results.confidence}%`} />
+                      <StatusBadge label="Rearrangement" value={`${results.rearrangement}`} />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
