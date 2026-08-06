@@ -1,12 +1,9 @@
 import { NavLink } from 'react-router-dom';
-import { HiOutlineChartPie, HiOutlineViewGrid, HiOutlineClipboardList, HiOutlineUpload, HiOutlineX } from 'react-icons/hi';
+import { HiOutlineChartPie, HiOutlineX } from 'react-icons/hi';
 import Logo from './Logo.jsx';
 
 const navItems = [
   { label: 'Dashboard', path: '/', icon: HiOutlineChartPie },
-  { label: 'Image Upload', path: '/upload', icon: HiOutlineUpload },
-  { label: 'Shelf Monitoring', path: '/monitoring', icon: HiOutlineViewGrid },
-  { label: 'Detection Results', path: '/results', icon: HiOutlineClipboardList },
 ];
 
 function Sidebar({ isOpen = false, onClose = () => {} }) {
