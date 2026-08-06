@@ -1,25 +1,49 @@
 import { useEffect, useState } from 'react';
-import { HiOutlineCube, HiOutlineExclamationCircle, HiOutlineShieldCheck, HiOutlineSparkles } from 'react-icons/hi';
+import { HiOutlineCube, HiOutlineExclamationCircle, HiOutlineShieldCheck, HiOutlineSparkles, HiOutlineArrowRight } from 'react-icons/hi';
 import { motion } from 'framer-motion';
 import AppShell from '../../components/layout/AppShell.jsx';
 import StatCard from '../../components/ui/StatCard.jsx';
 import StatusBadge from '../../components/ui/StatusBadge.jsx';
 import GradientButton from '../../components/ui/GradientButton.jsx';
 import SectionTitle from '../../components/ui/SectionTitle.jsx';
+import UploadDropzone from '../../components/ui/UploadDropzone.jsx';
 import { fetchDashboard } from '../../services/api/index.js';
 
 function Dashboard() {
   const [dashboard, setDashboard] = useState(null);
+  const [referenceImage, setReferenceImage] = useState(null);
+  const [currentImage, setCurrentImage] = useState(null);
 
   useEffect(() => {
     fetchDashboard().then(setDashboard);
   }, []);
 
+  useEffect(() => () => {
+    if (referenceImage) URL.revokeObjectURL(referenceImage.previewUrl);
+    if (currentImage) URL.revokeObjectURL(currentImage.previewUrl);
+  }, [referenceImage, currentImage]);
+
+  const handleSelect = (setter) => (file) => {
+    setter((prev) => {
+      if (prev) URL.revokeObjectURL(prev.previewUrl);
+      return { file, previewUrl: URL.createObjectURL(file) };
+    });
+  };
+
+  const handleClear = (setter) => () => {
+    setter((prev) => {
+      if (prev) URL.revokeObjectURL(prev.previewUrl);
+      return null;
+    });
+  };
+
+  const readyToCompare = Boolean(referenceImage && currentImage);
+
   return (
     <AppShell>
+      <SectionTitle title="Overview" subtitle="AI-powered retail shelf monitoring." />
       <div className="grid gap-6 xl:grid-cols-[1.1fr_0.9fr]">
         <div className="space-y-8">
-          <SectionTitle title="Overview" subtitle="AI-powered retail shelf monitoring." />
           <motion.div
             className="grid gap-6 md:grid-cols-2"
             initial={{ opacity: 0, y: 18 }}
@@ -77,46 +101,49 @@ function Dashboard() {
 
         <div className="space-y-6">
           <div className="card-glass p-8">
-            <div className="space-y-4">
-              <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">Insights snapshot</p>
-              <h2 className="text-2xl font-semibold text-soft">Retail shelf intelligence</h2>
-              <p className="text-sm leading-7 text-muted">An elegant dashboard view with AI-driven metrics, readiness indicators, and space to track product availability across store shelves.</p>
+            <div className="space-y-3">
+              <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">Shelf comparison</p>
+              <h2 className="text-2xl font-semibold text-soft">Upload shelf images</h2>
+              <p className="text-sm leading-7 text-muted">
+                Add a reference planogram and the latest shelf capture so the AI model can compare them and flag any
+                misplaced or missing products.
+              </p>
             </div>
-            <div className="mt-8 grid gap-4">
-              <div className="rounded-[24px] border border-black/10 bg-black/[0.03] p-5 dark:border-white/10 dark:bg-white/5">
-                <div className="flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-sm text-muted">Latest scan</p>
-                    <p className="mt-2 text-xl font-semibold text-soft">Shelf A1 - Grocery aisle</p>
-                  </div>
-                  <span className="rounded-full bg-brand/15 px-3 py-1 text-sm text-brand">Verified</span>
-                </div>
-              </div>
-              <div className="rounded-[24px] border border-black/10 bg-black/[0.03] p-5 dark:border-white/10 dark:bg-white/5">
-                <p className="text-sm text-muted">AI activity</p>
-                <div className="mt-3 flex items-center justify-between gap-4">
-                  <div>
-                    <p className="text-2xl font-semibold text-soft">92%</p>
-                    <p className="text-sm text-muted">Shelf conformity score</p>
-                  </div>
-                  <div className="rounded-full bg-emerald-400/10 px-3 py-1 text-sm text-emerald-200">Optimal</div>
-                </div>
-              </div>
-            </div>
-          </div>
 
-          <div className="card-glass p-8">
-            <div className="flex items-center justify-between">
-              <div>
-                <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">Daily summary</p>
-                <p className="mt-2 text-xl font-semibold text-soft">Shelf detection timeline</p>
+            <div className="mt-7 grid gap-4">
+              <UploadDropzone
+                step={1}
+                label="Reference image"
+                hint="Ideal planogram or previous approved layout"
+                file={referenceImage?.file}
+                previewUrl={referenceImage?.previewUrl}
+                onSelect={handleSelect(setReferenceImage)}
+                onClear={handleClear(setReferenceImage)}
+              />
+
+              <div className="flex items-center justify-center">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-black/[0.04] text-lavender dark:bg-white/10">
+                  <HiOutlineArrowRight size={16} />
+                </span>
               </div>
-              <div className="rounded-full bg-black/[0.03] px-4 py-3 text-sm text-muted dark:bg-white/5">Live simulation</div>
+
+              <UploadDropzone
+                step={2}
+                label="Current shelf image"
+                hint="Latest photo captured from the store floor"
+                file={currentImage?.file}
+                previewUrl={currentImage?.previewUrl}
+                onSelect={handleSelect(setCurrentImage)}
+                onClear={handleClear(setCurrentImage)}
+              />
             </div>
-            <div className="mt-8 grid gap-4">
-              <div className="rounded-3xl border border-black/10 bg-black/[0.03] p-4 text-sm text-soft dark:border-white/10 dark:bg-white/5">AI model has processed 98 shelf frames in the last hour.</div>
-              <div className="rounded-3xl border border-black/10 bg-black/[0.03] p-4 text-sm text-soft dark:border-white/10 dark:bg-white/5">Restocking recommendations updated for 12 products.</div>
-            </div>
+
+            <GradientButton
+              className="mt-7 w-full disabled:pointer-events-none disabled:opacity-40"
+              disabled={!readyToCompare}
+            >
+              {readyToCompare ? 'Run shelf comparison' : 'Upload both images to continue'}
+            </GradientButton>
           </div>
         </div>
       </div>
