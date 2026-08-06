@@ -3,7 +3,6 @@ import { HiOutlineCube, HiOutlineExclamationCircle, HiOutlineShieldCheck, HiOutl
 import { motion } from 'framer-motion';
 import AppShell from '../../components/layout/AppShell.jsx';
 import StatCard from '../../components/ui/StatCard.jsx';
-import StatusBadge from '../../components/ui/StatusBadge.jsx';
 import GradientButton from '../../components/ui/GradientButton.jsx';
 import SectionTitle from '../../components/ui/SectionTitle.jsx';
 import UploadDropzone from '../../components/ui/UploadDropzone.jsx';
@@ -69,34 +68,7 @@ function Dashboard() {
               );
             })}
           </motion.div>
-          <div className="grid gap-6 xl:grid-cols-[1.4fr_0.9fr]">
-            <div className="card-glass p-8">
-              <div className="flex flex-col gap-6">
-                <div>
-                  <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">Quick action</p>
-                  <h2 className="mt-3 text-2xl font-semibold text-soft">Analyze latest shelf frame</h2>
-                </div>
-                <p className="text-sm leading-7 text-muted">Initiate a new analysis cycle, review current statistics, and keep the shelf environment optimized with AI insights.</p>
-                <GradientButton className="w-full max-w-xs">Analyze Shelf</GradientButton>
-              </div>
-            </div>
-            <div className="card-glass p-8">
-              <div className="space-y-5">
-                <div className="flex items-center justify-between">
-                  <div>
-                    <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">System health</p>
-                    <p className="mt-2 text-lg font-semibold text-soft">Production readiness</p>
-                  </div>
-                  <span className="rounded-full bg-emerald-400/15 px-3 py-1 text-sm font-semibold text-emerald-300">Stable</span>
-                </div>
-                <div className="grid gap-4">
-                  {dashboard?.status.map((item) => (
-                    <StatusBadge key={item.label} label={item.label} value={item.value} />
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
+          {/* Quick action and System health cards removed */}
         </div>
 
         <div className="space-y-6">
