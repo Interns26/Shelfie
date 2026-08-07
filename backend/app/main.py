@@ -1,5 +1,5 @@
 from datetime import datetime
-from typing import List
+from typing import List, Optional
 
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
@@ -33,10 +33,16 @@ class DashboardResponse(BaseModel):
     status: List[StatusItem]
 
 
-class ResultDetail(BaseModel):
+class MisplacedDetail(BaseModel):
     name: str
-    row: str
-    category: str
+    rowNumber: str
+    productNumber: int
+    expectedProduct: str
+
+
+class MissingDetail(BaseModel):
+    name: str
+    missingCount: int
 
 
 class ResultsResponse(BaseModel):
@@ -49,8 +55,8 @@ class ResultsResponse(BaseModel):
     confidence: int
     misplaced: List[str]
     missing: List[str]
-    misplacedDetails: List[ResultDetail]
-    missingDetails: List[ResultDetail]
+    misplacedDetails: List[MisplacedDetail]
+    missingDetails: List[MissingDetail]
     image: str
 
 
@@ -118,14 +124,29 @@ async def get_results():
             "Sparkling water",
         ],
         "misplacedDetails": [
-            {"name": "Cereal bars", "row": "Row 2", "category": "Snack aisle"},
-            {"name": "Soda bottles", "row": "Row 4", "category": "Beverages"},
-            {"name": "Energy drinks", "row": "Row 3", "category": "Cold drinks"},
+            {
+                "name": "Cereal bars",
+                "rowNumber": "Row 2",
+                "productNumber": 12,
+                "expectedProduct": "Granola bars",
+            },
+            {
+                "name": "Soda bottles",
+                "rowNumber": "Row 4",
+                "productNumber": 8,
+                "expectedProduct": "Sparkling water",
+            },
+            {
+                "name": "Energy drinks",
+                "rowNumber": "Row 3",
+                "productNumber": 5,
+                "expectedProduct": "Sports drinks",
+            },
         ],
         "missingDetails": [
-            {"name": "Organic almond milk", "row": "Row 1", "category": "Dairy"},
-            {"name": "Signature chips", "row": "Row 2", "category": "Snacks"},
-            {"name": "Sparkling water", "row": "Row 4", "category": "Drinks"},
+            {"name": "Organic almond milk", "missingCount": 2},
+            {"name": "Signature chips", "missingCount": 1},
+            {"name": "Sparkling water", "missingCount": 4},
         ],
         "confidence": 93,
         "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=60",
