@@ -145,7 +145,7 @@ function Dashboard() {
                 </div>
 
                 <div className="grid gap-4 xl:grid-cols-2">
-                  <ProductList title="Misplaced products" items={results.misplacedDetails || results.misplaced || []} highlight />
+                  <ProductList title="Misplaced products" items={results.misplacedDetails || results.misplaced || []} />
                   <ProductList title="Missing products" items={results.missingDetails || results.missing || []} />
                 </div>
               </div>

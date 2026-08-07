@@ -33,6 +33,27 @@ class DashboardResponse(BaseModel):
     status: List[StatusItem]
 
 
+class ResultDetail(BaseModel):
+    name: str
+    row: str
+    category: str
+
+
+class ResultsResponse(BaseModel):
+    productsDetected: int
+    misplacedCount: int
+    missingCount: int
+    shelfHealth: int
+    healthy: int
+    rearrangement: int
+    confidence: int
+    misplaced: List[str]
+    missing: List[str]
+    misplacedDetails: List[ResultDetail]
+    missingDetails: List[ResultDetail]
+    image: str
+
+
 class AnalyzeResponse(BaseModel):
     success: bool
     analysisId: str
@@ -77,9 +98,12 @@ async def analyze_shelf(
     }
 
 
-@app.get("/api/results")
+@app.get("/api/results", response_model=ResultsResponse)
 async def get_results():
     return {
+        "productsDetected": 1278,
+        "misplacedCount": 3,
+        "missingCount": 3,
         "shelfHealth": 86,
         "healthy": 72,
         "rearrangement": 18,
@@ -92,6 +116,16 @@ async def get_results():
             "Organic almond milk",
             "Signature chips",
             "Sparkling water",
+        ],
+        "misplacedDetails": [
+            {"name": "Cereal bars", "row": "Row 2", "category": "Snack aisle"},
+            {"name": "Soda bottles", "row": "Row 4", "category": "Beverages"},
+            {"name": "Energy drinks", "row": "Row 3", "category": "Cold drinks"},
+        ],
+        "missingDetails": [
+            {"name": "Organic almond milk", "row": "Row 1", "category": "Dairy"},
+            {"name": "Signature chips", "row": "Row 2", "category": "Snacks"},
+            {"name": "Sparkling water", "row": "Row 4", "category": "Drinks"},
         ],
         "confidence": 93,
         "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1200&q=60",
