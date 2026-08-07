@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const api = axios.create({
   baseURL: '/api',
-  timeout: 4500,
+  timeout: 120000,
 });
 
 const mockDashboard = {
@@ -40,18 +40,27 @@ const mockResults = {
 };
 
 export const fetchDashboard = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 500));
-  return mockDashboard;
+  const response = await api.get('/dashboard');
+  return response.data;
 };
 
-export const analyzeShelf = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 1200));
-  return { success: true };
+export const analyzeShelf = async (referenceImage, currentImage) => {
+  const formData = new FormData();
+  formData.append('reference_image', referenceImage);
+  formData.append('current_image', currentImage);
+
+  const response = await api.post('/analyze', formData, {
+    headers: {
+      'Content-Type': 'multipart/form-data',
+    },
+  });
+
+  return response.data;
 };
 
 export const fetchResults = async () => {
-  await new Promise((resolve) => setTimeout(resolve, 650));
-  return mockResults;
+  const response = await api.get('/results');
+  return response.data;
 };
 
 export default api;

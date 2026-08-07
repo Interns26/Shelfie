@@ -6,7 +6,11 @@ import StatCard from '../../components/ui/StatCard.jsx';
 import GradientButton from '../../components/ui/GradientButton.jsx';
 import SectionTitle from '../../components/ui/SectionTitle.jsx';
 import UploadDropzone from '../../components/ui/UploadDropzone.jsx';
-import { fetchDashboard } from '../../services/api/index.js';
+import ProductList from '../../components/ui/ProductList.jsx';
+import ProgressBar from '../../components/ui/ProgressBar.jsx';
+import StatusBadge from '../../components/ui/StatusBadge.jsx';
+import Loader from '../../components/ui/Loader.jsx';
+import { analyzeShelf, fetchDashboard, fetchResults } from '../../services/api/index.js';
 
 function Dashboard() {
   const [dashboard, setDashboard] = useState(null);
@@ -22,7 +26,11 @@ function Dashboard() {
     if (currentImage) URL.revokeObjectURL(currentImage.previewUrl);
   }, [referenceImage, currentImage]);
 
+  const [analysisLoading, setAnalysisLoading] = useState(false);
+  const [results, setResults] = useState(null);
+
   const handleSelect = (setter) => (file) => {
+    setResults(null);
     setter((prev) => {
       if (prev) URL.revokeObjectURL(prev.previewUrl);
       return { file, previewUrl: URL.createObjectURL(file) };
@@ -30,6 +38,7 @@ function Dashboard() {
   };
 
   const handleClear = (setter) => () => {
+    setResults(null);
     setter((prev) => {
       if (prev) URL.revokeObjectURL(prev.previewUrl);
       return null;
@@ -37,6 +46,91 @@ function Dashboard() {
   };
 
   const readyToCompare = Boolean(referenceImage && currentImage);
+
+  const defaultSummaryItems = [
+    {
+      title: 'Products Detected',
+      value: '0',
+      description: 'Items analyzed in last 24h',
+      icon: 'box',
+    },
+    {
+      title: 'Misplaced Products',
+      value: 0,
+      description: 'Detected position errors',
+      icon: 'pin',
+    },
+    {
+      title: 'Missing Products',
+      value: 0,
+      description: 'Items needing restock',
+      icon: 'tag',
+    },
+    {
+      title: 'Shelf Health',
+      value: '0%',
+      description: 'Optimal display score',
+      icon: 'pulse',
+    },
+  ];
+
+  const summaryItems = results
+    ? [
+        {
+          title: 'Products Detected',
+          value: typeof results.productsDetected === 'number'
+            ? results.productsDetected.toLocaleString()
+            : results.productsDetected || '0',
+          description: 'Items analyzed in last 24h',
+          icon: 'box',
+        },
+        {
+          title: 'Misplaced Products',
+          value:
+            typeof results.misplaced === 'number'
+              ? results.misplaced
+              : results.misplaced?.length ?? results.misplacedCount ?? 0,
+          description: 'Detected position errors',
+          icon: 'pin',
+        },
+        {
+          title: 'Missing Products',
+          value:
+            typeof results.missing === 'number'
+              ? results.missing
+              : results.missing?.length ?? results.missingCount ?? 0,
+          description: 'Items needing restock',
+          icon: 'tag',
+        },
+        {
+          title: 'Shelf Health',
+          value: `${results.shelfHealth ?? 0}%`,
+          description: 'Optimal display score',
+          icon: 'pulse',
+        },
+      ]
+    : defaultSummaryItems;
+
+  const [analysisError, setAnalysisError] = useState(null);
+
+  const handleAnalyze = async () => {
+    if (!readyToCompare) return;
+
+    setAnalysisLoading(true);
+    setAnalysisError(null);
+    setResults(null);
+
+    try {
+      const analyzeResponse = await analyzeShelf(referenceImage.file, currentImage.file);
+      const fetchedResults = analyzeResponse.results || await fetchResults();
+      setResults(fetchedResults);
+    } catch (error) {
+      console.error('Analysis failed', error);
+      setAnalysisError(error?.response?.data?.detail || error.message || 'Analysis failed');
+    } finally {
+      setAnalysisLoading(false);
+    }
+  };
 
   return (
     <AppShell>
@@ -49,11 +143,11 @@ function Dashboard() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
           >
-            {dashboard?.summary.map((item, index) => {
+            {summaryItems?.map((item, index) => {
               const icons = {
-                box: <HiOutlineCube size={24} />, 
-                pin: <HiOutlineExclamationCircle size={24} />, 
-                tag: <HiOutlineSparkles size={24} />, 
+                box: <HiOutlineCube size={24} />,
+                pin: <HiOutlineExclamationCircle size={24} />,
+                tag: <HiOutlineSparkles size={24} />,
                 pulse: <HiOutlineShieldCheck size={24} />,
               };
 
@@ -68,6 +162,26 @@ function Dashboard() {
               );
             })}
           </motion.div>
+          {results ? (
+            <motion.div
+              className="card-glass p-8"
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.05 }}
+            >
+              <div className="space-y-6">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">Detailed findings</p>
+                  <h2 className="text-2xl font-semibold text-soft">Tracking missing and misplaced products</h2>
+                </div>
+
+                <div className="grid gap-4 xl:grid-cols-2">
+                  <ProductList title="Misplaced products" items={results.misplacedDetails || results.misplaced || []} />
+                  <ProductList title="Missing products" items={results.missingDetails || results.missing || []} />
+                </div>
+              </div>
+            </motion.div>
+          ) : null}
           {/* Quick action and System health cards removed */}
         </div>
 
@@ -112,10 +226,26 @@ function Dashboard() {
 
             <GradientButton
               className="mt-7 w-full disabled:pointer-events-none disabled:opacity-40"
-              disabled={!readyToCompare}
+              disabled={!readyToCompare || analysisLoading}
+              onClick={handleAnalyze}
             >
-              {readyToCompare ? 'Run shelf comparison' : 'Upload both images to continue'}
+              {analysisLoading
+                ? 'Running shelf comparison...'
+                : readyToCompare
+                ? 'Run shelf comparison'
+                : 'Upload both images to continue'}
             </GradientButton>
+
+            {analysisLoading ? (
+              <div className="mt-6">
+                <Loader label="Analyzing shelf comparison..." />
+              </div>
+            ) : null}
+            {analysisError ? (
+              <div className="mt-6 rounded-3xl border border-red-400/20 bg-red-500/10 p-4 text-sm text-red-200">
+                <strong>Error:</strong> {analysisError}
+              </div>
+            ) : null}
           </div>
         </div>
       </div>
