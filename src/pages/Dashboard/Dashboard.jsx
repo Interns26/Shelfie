@@ -47,13 +47,40 @@ function Dashboard() {
 
   const readyToCompare = Boolean(referenceImage && currentImage);
 
+  const defaultSummaryItems = [
+    {
+      title: 'Products Detected',
+      value: '0',
+      description: 'Items analyzed in last 24h',
+      icon: 'box',
+    },
+    {
+      title: 'Misplaced Products',
+      value: 0,
+      description: 'Detected position errors',
+      icon: 'pin',
+    },
+    {
+      title: 'Missing Products',
+      value: 0,
+      description: 'Items needing restock',
+      icon: 'tag',
+    },
+    {
+      title: 'Shelf Health',
+      value: '0%',
+      description: 'Optimal display score',
+      icon: 'pulse',
+    },
+  ];
+
   const summaryItems = results
     ? [
         {
           title: 'Products Detected',
           value: typeof results.productsDetected === 'number'
             ? results.productsDetected.toLocaleString()
-            : results.productsDetected || dashboard?.summary?.[0]?.value || '—',
+            : results.productsDetected || '0',
           description: 'Items analyzed in last 24h',
           icon: 'box',
         },
@@ -62,7 +89,7 @@ function Dashboard() {
           value:
             typeof results.misplaced === 'number'
               ? results.misplaced
-              : results.misplaced?.length ?? results.misplacedCount ?? dashboard?.summary?.[1]?.value ?? '—',
+              : results.misplaced?.length ?? results.misplacedCount ?? 0,
           description: 'Detected position errors',
           icon: 'pin',
         },
@@ -71,18 +98,18 @@ function Dashboard() {
           value:
             typeof results.missing === 'number'
               ? results.missing
-              : results.missing?.length ?? results.missingCount ?? dashboard?.summary?.[2]?.value ?? '—',
+              : results.missing?.length ?? results.missingCount ?? 0,
           description: 'Items needing restock',
           icon: 'tag',
         },
         {
           title: 'Shelf Health',
-          value: `${results.shelfHealth ?? dashboard?.summary?.[3]?.value ?? '—'}%`,
+          value: `${results.shelfHealth ?? 0}%`,
           description: 'Optimal display score',
           icon: 'pulse',
         },
       ]
-    : dashboard?.summary;
+    : defaultSummaryItems;
 
   const [analysisError, setAnalysisError] = useState(null);
 

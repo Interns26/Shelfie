@@ -1,9 +1,9 @@
 {
     "summary": {
-        "correct": 68,
-        "missing": 0,
-        "misplaced": 0,
-        "unexpected_product": 0
+        "correct": 39,
+        "missing": 4,
+        "misplaced": 25,
+        "unexpected_product": 4
     },
     "results": [
         {
@@ -11,8 +11,8 @@
             "row": 1,
             "position": 1,
             "expected": "Thumbs up",
-            "detected": "Thumbs up",
-            "status": "correct"
+            "detected": "Sprite",
+            "status": "misplaced"
         },
         {
             "slot_id": 2,
@@ -99,8 +99,8 @@
             "row": 1,
             "position": 12,
             "expected": "Thumbs up",
-            "detected": "Thumbs up",
-            "status": "correct"
+            "detected": "Dew",
+            "status": "misplaced"
         },
         {
             "slot_id": 13,
@@ -115,32 +115,32 @@
             "row": 1,
             "position": 14,
             "expected": "Pepsi",
-            "detected": "Pepsi",
-            "status": "correct"
+            "detected": "Coca Cola",
+            "status": "misplaced"
         },
         {
             "slot_id": 15,
             "row": 1,
             "position": 15,
             "expected": "Thumbs up",
-            "detected": "Thumbs up",
-            "status": "correct"
+            "detected": "Pepsi",
+            "status": "misplaced"
         },
         {
             "slot_id": 16,
             "row": 1,
             "position": 16,
             "expected": "Pepsi",
-            "detected": "Pepsi",
-            "status": "correct"
+            "detected": "Coca Cola",
+            "status": "misplaced"
         },
         {
             "slot_id": 17,
             "row": 1,
             "position": 17,
             "expected": "Pepsi",
-            "detected": "Pepsi",
-            "status": "correct"
+            "detected": "Dew",
+            "status": "misplaced"
         },
         {
             "slot_id": 18,
@@ -187,8 +187,8 @@
             "row": 1,
             "position": 23,
             "expected": "Sprite",
-            "detected": "Sprite",
-            "status": "correct"
+            "detected": "7up",
+            "status": "misplaced"
         },
         {
             "slot_id": 24,
@@ -211,16 +211,16 @@
             "row": 1,
             "position": 26,
             "expected": "Pepsi",
-            "detected": "Pepsi",
-            "status": "correct"
+            "detected": "Fanta",
+            "status": "misplaced"
         },
         {
             "slot_id": 27,
             "row": 2,
             "position": 1,
             "expected": "7up",
-            "detected": "7up",
-            "status": "correct"
+            "detected": "Coca Cola",
+            "status": "misplaced"
         },
         {
             "slot_id": 28,
@@ -251,16 +251,16 @@
             "row": 2,
             "position": 5,
             "expected": "Sprite",
-            "detected": "Sprite",
-            "status": "correct"
+            "detected": "Fanta",
+            "status": "misplaced"
         },
         {
             "slot_id": 32,
             "row": 2,
             "position": 6,
             "expected": "Sprite",
-            "detected": "Sprite",
-            "status": "correct"
+            "detected": "Fanta",
+            "status": "misplaced"
         },
         {
             "slot_id": 33,
@@ -291,40 +291,40 @@
             "row": 2,
             "position": 10,
             "expected": "Thumbs up",
-            "detected": "Thumbs up",
-            "status": "correct"
+            "detected": "Sprite",
+            "status": "misplaced"
         },
         {
             "slot_id": 37,
             "row": 2,
             "position": 11,
             "expected": "Coca Cola",
-            "detected": "Coca Cola",
-            "status": "correct"
+            "detected": "Thumbs up",
+            "status": "misplaced"
         },
         {
             "slot_id": 38,
             "row": 2,
             "position": 12,
             "expected": "Pepsi",
-            "detected": "Pepsi",
-            "status": "correct"
+            "detected": "Coca Cola",
+            "status": "misplaced"
         },
         {
             "slot_id": 39,
             "row": 2,
             "position": 13,
             "expected": "Pepsi",
-            "detected": "Pepsi",
-            "status": "correct"
+            "detected": "Coca Cola",
+            "status": "misplaced"
         },
         {
             "slot_id": 40,
             "row": 2,
             "position": 14,
             "expected": "Pepsi",
-            "detected": "Pepsi",
-            "status": "correct"
+            "detected": "Coca Cola",
+            "status": "misplaced"
         },
         {
             "slot_id": 41,
@@ -339,8 +339,8 @@
             "row": 2,
             "position": 16,
             "expected": "Pepsi",
-            "detected": "Pepsi",
-            "status": "correct"
+            "detected": "Coca Cola",
+            "status": "misplaced"
         },
         {
             "slot_id": 43,
@@ -355,40 +355,32 @@
             "row": 2,
             "position": 18,
             "expected": "Pepsi",
-            "detected": "Pepsi",
-            "status": "correct"
+            "detected": "Fanta",
+            "status": "misplaced"
         },
         {
             "slot_id": 45,
             "row": 2,
             "position": 19,
             "expected": "Pepsi",
-            "detected": "Pepsi",
-            "status": "correct"
+            "detected": "Sprite",
+            "status": "misplaced"
         },
         {
             "slot_id": 46,
             "row": 2,
             "position": 20,
             "expected": "Pepsi",
-            "detected": "Pepsi",
-            "status": "correct"
+            "detected": "Fanta",
+            "status": "misplaced"
         },
         {
             "slot_id": 47,
             "row": 2,
             "position": 21,
             "expected": "7up",
-            "detected": "7up",
-            "status": "correct"
-        },
-        {
-            "slot_id": 48,
-            "row": 2,
-            "position": 22,
-            "expected": "7up",
-            "detected": "7up",
-            "status": "correct"
+            "detected": "Sprite",
+            "status": "misplaced"
         },
         {
             "slot_id": 49,
@@ -411,16 +403,16 @@
             "row": 3,
             "position": 3,
             "expected": "Thumbs up",
-            "detected": "Thumbs up",
-            "status": "correct"
+            "detected": "Coca Cola",
+            "status": "misplaced"
         },
         {
             "slot_id": 52,
             "row": 3,
             "position": 4,
             "expected": "Thumbs up",
-            "detected": "Thumbs up",
-            "status": "correct"
+            "detected": "Coca Cola",
+            "status": "misplaced"
         },
         {
             "slot_id": 53,
@@ -483,16 +475,16 @@
             "row": 3,
             "position": 12,
             "expected": "Sprite",
-            "detected": "Sprite",
-            "status": "correct"
+            "detected": "Thumbs up",
+            "status": "misplaced"
         },
         {
             "slot_id": 61,
             "row": 3,
             "position": 13,
             "expected": "Fanta",
-            "detected": "Fanta",
-            "status": "correct"
+            "detected": "Thumbs up",
+            "status": "misplaced"
         },
         {
             "slot_id": 62,
@@ -527,28 +519,48 @@
             "status": "correct"
         },
         {
+            "slot_id": 48,
+            "expected": "7up",
+            "status": "missing"
+        },
+        {
             "slot_id": 66,
-            "row": 3,
-            "position": 18,
             "expected": "Pepsi",
-            "detected": "Pepsi",
-            "status": "correct"
+            "status": "missing"
         },
         {
             "slot_id": 67,
-            "row": 3,
-            "position": 19,
             "expected": "Pepsi",
-            "detected": "Pepsi",
-            "status": "correct"
+            "status": "missing"
         },
         {
             "slot_id": 68,
-            "row": 3,
-            "position": 20,
             "expected": "Pepsi",
+            "status": "missing"
+        },
+        {
+            "detected": "7up",
+            "current_row": 2,
+            "current_position": 22,
+            "status": "unexpected_product"
+        },
+        {
             "detected": "Pepsi",
-            "status": "correct"
+            "current_row": 3,
+            "current_position": 18,
+            "status": "unexpected_product"
+        },
+        {
+            "detected": "Pepsi",
+            "current_row": 3,
+            "current_position": 19,
+            "status": "unexpected_product"
+        },
+        {
+            "detected": "Pepsi",
+            "current_row": 3,
+            "current_position": 20,
+            "status": "unexpected_product"
         }
     ]
 }
