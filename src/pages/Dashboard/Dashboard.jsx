@@ -84,18 +84,22 @@ function Dashboard() {
       ]
     : dashboard?.summary;
 
+  const [analysisError, setAnalysisError] = useState(null);
+
   const handleAnalyze = async () => {
     if (!readyToCompare) return;
 
     setAnalysisLoading(true);
+    setAnalysisError(null);
     setResults(null);
 
     try {
-      await analyzeShelf(referenceImage.file, currentImage.file);
-      const fetchedResults = await fetchResults();
+      const analyzeResponse = await analyzeShelf(referenceImage.file, currentImage.file);
+      const fetchedResults = analyzeResponse.results || await fetchResults();
       setResults(fetchedResults);
     } catch (error) {
       console.error('Analysis failed', error);
+      setAnalysisError(error?.response?.data?.detail || error.message || 'Analysis failed');
     } finally {
       setAnalysisLoading(false);
     }
@@ -208,6 +212,11 @@ function Dashboard() {
             {analysisLoading ? (
               <div className="mt-6">
                 <Loader label="Analyzing shelf comparison..." />
+              </div>
+            ) : null}
+            {analysisError ? (
+              <div className="mt-6 rounded-3xl border border-red-400/20 bg-red-500/10 p-4 text-sm text-red-200">
+                <strong>Error:</strong> {analysisError}
               </div>
             ) : null}
           </div>

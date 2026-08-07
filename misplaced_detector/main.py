@@ -1,3 +1,34 @@
+import json
+import os
+from pathlib import Path
+
+
+def ensure_ultralytics_settings():
+    appdata = os.getenv("APPDATA")
+    if not appdata:
+        return
+
+    ul_dir = Path(appdata) / "Ultralytics"
+    ul_dir.mkdir(parents=True, exist_ok=True)
+
+    settings_path = ul_dir / "settings.json"
+    default_settings = {
+        "runs_dir": str(Path(__file__).resolve().parent.parent / "ultralytics_runs")
+    }
+
+    if settings_path.exists():
+        try:
+            json.loads(settings_path.read_text(encoding="utf-8"))
+            return
+        except Exception:
+            pass
+
+    settings_path.write_text(json.dumps(default_settings, indent=2), encoding="utf-8")
+    print(f"Created Ultralytics settings at {settings_path}")
+
+
+ensure_ultralytics_settings()
+
 from pipeline.reference import ReferenceBuilder
 from pipeline.current import CurrentBuilder
 from pipeline.comparison import ComparisonEngine
