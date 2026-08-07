@@ -47,6 +47,43 @@ function Dashboard() {
 
   const readyToCompare = Boolean(referenceImage && currentImage);
 
+  const summaryItems = results
+    ? [
+        {
+          title: 'Products Detected',
+          value: typeof results.productsDetected === 'number'
+            ? results.productsDetected.toLocaleString()
+            : results.productsDetected || dashboard?.summary?.[0]?.value || '—',
+          description: 'Items analyzed in last 24h',
+          icon: 'box',
+        },
+        {
+          title: 'Misplaced Products',
+          value:
+            typeof results.misplaced === 'number'
+              ? results.misplaced
+              : results.misplaced?.length ?? results.misplacedCount ?? dashboard?.summary?.[1]?.value ?? '—',
+          description: 'Detected position errors',
+          icon: 'pin',
+        },
+        {
+          title: 'Missing Products',
+          value:
+            typeof results.missing === 'number'
+              ? results.missing
+              : results.missing?.length ?? results.missingCount ?? dashboard?.summary?.[2]?.value ?? '—',
+          description: 'Items needing restock',
+          icon: 'tag',
+        },
+        {
+          title: 'Shelf Health',
+          value: `${results.shelfHealth ?? dashboard?.summary?.[3]?.value ?? '—'}%`,
+          description: 'Optimal display score',
+          icon: 'pulse',
+        },
+      ]
+    : dashboard?.summary;
+
   const handleAnalyze = async () => {
     if (!readyToCompare) return;
 
@@ -75,11 +112,11 @@ function Dashboard() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.55 }}
           >
-            {dashboard?.summary.map((item, index) => {
+            {summaryItems?.map((item, index) => {
               const icons = {
-                box: <HiOutlineCube size={24} />, 
-                pin: <HiOutlineExclamationCircle size={24} />, 
-                tag: <HiOutlineSparkles size={24} />, 
+                box: <HiOutlineCube size={24} />,
+                pin: <HiOutlineExclamationCircle size={24} />,
+                tag: <HiOutlineSparkles size={24} />,
                 pulse: <HiOutlineShieldCheck size={24} />,
               };
 
@@ -94,6 +131,26 @@ function Dashboard() {
               );
             })}
           </motion.div>
+          {results ? (
+            <motion.div
+              className="card-glass p-8"
+              initial={{ opacity: 0, y: 18 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.55, delay: 0.05 }}
+            >
+              <div className="space-y-6">
+                <div>
+                  <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">Detailed findings</p>
+                  <h2 className="text-2xl font-semibold text-soft">Tracking missing and misplaced products</h2>
+                </div>
+
+                <div className="grid gap-4 xl:grid-cols-2">
+                  <ProductList title="Misplaced products" items={results.misplacedDetails || results.misplaced || []} highlight />
+                  <ProductList title="Missing products" items={results.missingDetails || results.missing || []} />
+                </div>
+              </div>
+            </motion.div>
+          ) : null}
           {/* Quick action and System health cards removed */}
         </div>
 
@@ -151,29 +208,6 @@ function Dashboard() {
             {analysisLoading ? (
               <div className="mt-6">
                 <Loader label="Analyzing shelf comparison..." />
-              </div>
-            ) : results ? (
-              <div className="mt-6 space-y-6">
-                <div className="card-glass p-8">
-                  <div className="space-y-4">
-                    <div>
-                      <p className="text-sm uppercase tracking-[0.28em] text-lavender/80">Analysis results</p>
-                      <h2 className="text-2xl font-semibold text-soft">Shelf comparison complete</h2>
-                    </div>
-
-                    <ProgressBar label="Shelf Health" value={results.shelfHealth} />
-
-                    <div className="grid gap-4 xl:grid-cols-2">
-                      <ProductList title="Misplaced products" items={results.misplaced} highlight />
-                      <ProductList title="Missing products" items={results.missing} />
-                    </div>
-
-                    <div className="grid gap-4 sm:grid-cols-2">
-                      <StatusBadge label="Confidence" value={`${results.confidence}%`} />
-                      <StatusBadge label="Rearrangement" value={`${results.rearrangement}`} />
-                    </div>
-                  </div>
-                </div>
               </div>
             ) : null}
           </div>
