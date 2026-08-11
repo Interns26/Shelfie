@@ -1,3 +1,6 @@
+/* Copyright (c) UWorx Services 2026. All Rights Reserved. The information contained herein is proprietary and confidential. This proprietary and confidential information, either in whole or in part, shall not be used for any purpose unless permitted by the terms of a valid license agreement. */
+import React from 'react';
+
 function BackgroundDecor() {
   return (
     <div className="pointer-events-none absolute inset-0 overflow-hidden" aria-hidden="true">
@@ -15,7 +18,7 @@ function BackgroundDecor() {
       >
         <circle cx="190" cy="190" r="189" stroke="url(#ring-b)" strokeWidth="1" />
       </svg>
-      <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1440 300" fill="none" preserveAspectRatio="none">
+          <svg className="absolute inset-0 h-full w-full" viewBox="0 0 1440 300" fill="none" preserveAspectRatio="none">
         <path
           d="M-40 60 C 240 160, 520 -20, 800 90 S 1360 160, 1480 40"
           stroke="url(#line-a)"

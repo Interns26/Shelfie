@@ -1,3 +1,4 @@
+/* Copyright (c) UWorx Services 2026. All Rights Reserved. The information contained herein is proprietary and confidential. This proprietary and confidential information, either in whole or in part, shall not be used for any purpose unless permitted by the terms of a valid license agreement. */
 function Loader({ label = 'Loading' }) {
   return (
     <div className="flex min-h-[220px] items-center justify-center rounded-[24px] border border-black/10 bg-black/[0.03] p-8 text-center text-sm text-muted shadow-panel dark:border-white/10 dark:bg-white/5">
