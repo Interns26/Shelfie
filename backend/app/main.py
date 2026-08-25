@@ -152,6 +152,7 @@ class AnalyzeResponse(BaseModel):
     success: bool
     analysisId: str
     processedAt: str
+    results: Optional[dict] = None
 
 
 @app.get("/api/dashboard", response_model=DashboardResponse)

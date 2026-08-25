@@ -8,7 +8,8 @@ export default defineConfig({
     port: 4173,
     proxy: {
       '/api': {
-        target: 'http://127.0.0.1:8000',
+        // For local development (no Docker), proxy to localhost backend
+        target: 'http://localhost:8000',
         changeOrigin: true,
         secure: false,
       },

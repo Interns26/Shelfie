@@ -2,20 +2,28 @@ node_modules
 dist
 .DS_Store
 .env
+.vscode/
+
+__pycache__/
+
+# Generated detector outputs (regenerated on each run)
+misplaced_detector/outputs/
+misplaced_detector/input/
+
+# Dev scripts
 test.py
 test_clustering.py
 images_extractor.py
 dinov2.py
 annotations.py
+annotations_applier.py
+test_misplaced.py
+
+# Data folders
 results/
 cropped_products_022/
 cropped_products_025/
 cropped_products/
 annotated_images/
-__pycache__/
-annotations_applier.py
-.DS_Store
 samples/
-results/
-test_misplaced.py
 
