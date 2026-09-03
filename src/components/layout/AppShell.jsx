@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import Sidebar from './Sidebar.jsx';
 import Navbar from './Navbar.jsx';
+
 function AppShell({ children }) {
   const [sidebarOpen, setSidebarOpen] = useState(false);
 

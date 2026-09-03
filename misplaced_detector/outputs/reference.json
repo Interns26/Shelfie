@@ -1,37 +1,37 @@
 {
-    "image": "D:\\retail shelf intelligence\\misplaced_detector\\input\\reference.jpg",
-    "total_slots": 69,
+    "image": "C:\\Users\\EshaMubashirKhan\\Shelfie\\misplaced_detector\\input\\reference.jpg",
+    "total_slots": 72,
     "slots": [
         {
             "slot_id": 1,
             "row": 1,
             "position": 1,
             "center": [
-                26.014207661151886,
-                104.15497016906738
+                55.37653350830078,
+                87.08920097351074
             ],
             "bbox": [
-                1,
-                20,
-                50,
-                188
+                3,
+                52,
+                107,
+                121
             ],
             "expected_type": "product",
-            "expected_product": "Sprite"
+            "expected_product": "Limca"
         },
         {
             "slot_id": 2,
             "row": 1,
             "position": 2,
             "center": [
-                78.24359321594238,
-                103.92076683044434
+                244.59331512451172,
+                106.61691284179688
             ],
             "bbox": [
-                54,
-                19,
-                101,
-                187
+                202,
+                62,
+                286,
+                150
             ],
             "expected_type": "product",
             "expected_product": "Coca Cola"
@@ -41,99 +41,99 @@
             "row": 1,
             "position": 3,
             "center": [
-                130.07914352416992,
-                103.12843608856201
+                337.2743835449219,
+                97.42813491821289
             ],
             "bbox": [
-                105,
-                16,
-                154,
-                189
+                289,
+                62,
+                385,
+                132
             ],
             "expected_type": "product",
-            "expected_product": "Thumbs up"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 4,
             "row": 1,
             "position": 4,
             "center": [
-                183.20755767822266,
-                102.43743705749512
+                431.2652587890625,
+                105.70413970947266
             ],
             "bbox": [
-                158,
-                16,
-                207,
-                188
+                390,
+                71,
+                471,
+                140
             ],
             "expected_type": "product",
-            "expected_product": "Thumbs up"
+            "expected_product": "Sprite"
         },
         {
             "slot_id": 5,
             "row": 1,
             "position": 5,
             "center": [
-                235.81967163085938,
-                104.18727111816406
+                519.3388977050781,
+                115.34450912475586
             ],
             "bbox": [
-                211,
-                16,
-                260,
-                191
+                475,
+                74,
+                562,
+                155
             ],
             "expected_type": "product",
-            "expected_product": "Sprite"
+            "expected_product": "Fanta"
         },
         {
             "slot_id": 6,
             "row": 1,
             "position": 6,
             "center": [
-                290.2055358886719,
-                106.39606857299805
+                609.7916870117188,
+                117.83473587036133
             ],
             "bbox": [
-                264,
-                17,
-                316,
-                194
+                568,
+                74,
+                651,
+                160
             ],
             "expected_type": "product",
-            "expected_product": "Sprite"
+            "expected_product": "Fanta"
         },
         {
             "slot_id": 7,
             "row": 1,
             "position": 7,
             "center": [
-                346.2567901611328,
-                108.11339855194092
+                697.5680541992188,
+                121.86027908325195
             ],
             "bbox": [
-                320,
-                18,
-                371,
-                197
+                656,
+                82,
+                738,
+                160
             ],
             "expected_type": "product",
-            "expected_product": "Sprite"
+            "expected_product": "Fanta"
         },
         {
             "slot_id": 8,
             "row": 1,
             "position": 8,
             "center": [
-                399.1080017089844,
-                111.42836093902588
+                790.1490173339844,
+                123.2830810546875
             ],
             "bbox": [
-                374,
-                18,
-                424,
-                203
+                747,
+                79,
+                833,
+                167
             ],
             "expected_type": "product",
             "expected_product": "Sprite"
@@ -143,82 +143,82 @@
             "row": 1,
             "position": 9,
             "center": [
-                450.36680603027344,
-                111.11532592773438
+                874.5157165527344,
+                132.4576873779297
             ],
             "bbox": [
-                425,
-                18,
-                475,
-                203
+                837,
+                106,
+                911,
+                158
             ],
             "expected_type": "product",
-            "expected_product": "Sprite"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 10,
             "row": 1,
             "position": 10,
             "center": [
-                504.2564239501953,
-                111.50654125213623
+                968.3903198242188,
+                131.0208740234375
             ],
             "bbox": [
-                477,
-                18,
-                530,
-                204
+                920,
+                102,
+                1016,
+                159
             ],
             "expected_type": "product",
-            "expected_product": "Sprite"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 11,
             "row": 1,
             "position": 11,
             "center": [
-                557.5155334472656,
-                110.22703552246094
+                1062.4749145507812,
+                124.2755355834961
             ],
             "bbox": [
-                532,
-                19,
-                582,
-                201
+                1019,
+                91,
+                1105,
+                157
             ],
             "expected_type": "product",
-            "expected_product": "Sprite"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 12,
             "row": 1,
             "position": 12,
             "center": [
-                608.7179870605469,
-                110.26807975769043
+                1150.521728515625,
+                131.303466796875
             ],
             "bbox": [
-                584,
-                20,
-                632,
-                200
+                1115,
+                98,
+                1185,
+                164
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 13,
             "row": 1,
             "position": 13,
             "center": [
-                659.5917358398438,
-                108.74991989135742
+                1154.954345703125,
+                138.32167053222656
             ],
             "bbox": [
-                635,
-                20,
-                683,
-                197
+                1112,
+                96,
+                1197,
+                180
             ],
             "expected_type": "product",
             "expected_product": "Coca Cola"
@@ -228,14 +228,14 @@
             "row": 1,
             "position": 14,
             "center": [
-                711.3984985351562,
-                110.35477447509766
+                1240.8976440429688,
+                134.29990768432617
             ],
             "bbox": [
-                687,
-                22,
-                735,
-                198
+                1202,
+                108,
+                1279,
+                160
             ],
             "expected_type": "product",
             "expected_product": "Coca Cola"
@@ -245,218 +245,218 @@
             "row": 1,
             "position": 15,
             "center": [
-                761.7286071777344,
-                110.59414672851562
+                1241.4126586914062,
+                145.07150268554688
             ],
             "bbox": [
-                738,
-                23,
-                784,
-                198
+                1202,
+                102,
+                1280,
+                187
             ],
             "expected_type": "product",
-            "expected_product": "7up"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 16,
-            "row": 1,
-            "position": 16,
+            "row": 2,
+            "position": 1,
             "center": [
-                812.6187744140625,
-                115.51876068115234
+                27.247865676879883,
+                281.0157241821289
             ],
             "bbox": [
-                787,
-                27,
-                837,
-                203
+                0,
+                227,
+                54,
+                334
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 17,
-            "row": 1,
-            "position": 17,
+            "row": 2,
+            "position": 2,
             "center": [
-                865.5206909179688,
-                116.24464321136475
+                97.00516319274902,
+                277.9201354980469
             ],
             "bbox": [
-                840,
-                26,
-                890,
-                205
+                58,
+                225,
+                135,
+                330
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Fanta"
         },
         {
             "slot_id": 18,
-            "row": 1,
-            "position": 18,
+            "row": 2,
+            "position": 3,
             "center": [
-                919.0392761230469,
-                110.81282043457031
+                179.81192779541016,
+                276.7158432006836
             ],
             "bbox": [
-                895,
-                23,
-                943,
-                197
+                141,
+                224,
+                218,
+                328
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 19,
-            "row": 1,
-            "position": 19,
+            "row": 2,
+            "position": 4,
             "center": [
-                970.8862609863281,
-                111.489914894104
+                267.05224609375,
+                279.69080352783203
             ],
             "bbox": [
-                945,
-                25,
-                995,
-                197
+                223,
+                228,
+                310,
+                330
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Fanta"
         },
         {
             "slot_id": 20,
-            "row": 1,
-            "position": 20,
+            "row": 2,
+            "position": 5,
             "center": [
-                1025.3788146972656,
-                110.3704833984375
+                354.06861877441406,
+                279.3894577026367
             ],
             "bbox": [
-                999,
-                24,
-                1051,
-                196
+                317,
+                226,
+                391,
+                331
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Fanta"
         },
         {
             "slot_id": 21,
-            "row": 1,
-            "position": 21,
+            "row": 2,
+            "position": 6,
             "center": [
-                1080.3635864257812,
-                112.19310188293457
+                436.59754943847656,
+                285.7170181274414
             ],
             "bbox": [
-                1053,
-                25,
-                1106,
-                198
+                395,
+                230,
+                477,
+                341
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Fanta"
         },
         {
             "slot_id": 22,
-            "row": 1,
-            "position": 22,
+            "row": 2,
+            "position": 7,
             "center": [
-                1135.2965698242188,
-                113.32126903533936
+                524.5889434814453,
+                288.31233978271484
             ],
             "bbox": [
-                1111,
-                26,
-                1158,
-                199
+                483,
+                231,
+                566,
+                344
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Sprite"
         },
         {
             "slot_id": 23,
-            "row": 1,
-            "position": 23,
+            "row": 2,
+            "position": 8,
             "center": [
-                1185.392333984375,
-                117.20042610168457
+                611.0934448242188,
+                291.35931396484375
             ],
             "bbox": [
-                1160,
-                28,
-                1209,
-                205
+                570,
+                234,
+                652,
+                347
             ],
             "expected_type": "product",
-            "expected_product": "Thumbs up"
+            "expected_product": "Fanta"
         },
         {
             "slot_id": 24,
-            "row": 1,
-            "position": 24,
+            "row": 2,
+            "position": 9,
             "center": [
-                1239.708740234375,
-                118.32161140441895
+                696.5101013183594,
+                295.5785369873047
             ],
             "bbox": [
-                1213,
-                28,
-                1266,
-                207
+                657,
+                240,
+                735,
+                350
             ],
             "expected_type": "product",
-            "expected_product": "7up"
+            "expected_product": "Fanta"
         },
         {
             "slot_id": 25,
-            "row": 1,
-            "position": 25,
+            "row": 2,
+            "position": 10,
             "center": [
-                1294.645263671875,
-                118.1475477218628
+                783.5271606445312,
+                298.3802490234375
             ],
             "bbox": [
-                1270,
-                29,
-                1318,
-                206
+                740,
+                241,
+                826,
+                355
             ],
             "expected_type": "product",
-            "expected_product": "7up"
+            "expected_product": "Fanta"
         },
         {
             "slot_id": 26,
-            "row": 1,
-            "position": 26,
+            "row": 2,
+            "position": 11,
             "center": [
-                1339.719482421875,
-                118.83627128601074
+                872.3223571777344,
+                319.8197326660156
             ],
             "bbox": [
-                1321,
-                28,
-                1357,
-                209
+                832,
+                274,
+                911,
+                365
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 27,
             "row": 2,
-            "position": 1,
+            "position": 12,
             "center": [
-                12.94232981838286,
-                350.4632263183594
+                951.9146728515625,
+                324.8399963378906
             ],
             "bbox": [
-                0,
-                240,
-                25,
-                460
+                916,
+                289,
+                986,
+                360
             ],
             "expected_type": "product",
             "expected_product": "Coca Cola"
@@ -464,713 +464,764 @@
         {
             "slot_id": 28,
             "row": 2,
-            "position": 2,
+            "position": 13,
             "center": [
-                56.018035888671875,
-                352.3473815917969
+                1034.2693176269531,
+                297.2326354980469
             ],
             "bbox": [
-                28,
-                243,
-                83,
-                461
+                992,
+                233,
+                1075,
+                361
             ],
             "expected_type": "product",
-            "expected_product": "Dew"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 29,
             "row": 2,
-            "position": 3,
+            "position": 14,
             "center": [
-                119.95531463623047,
-                353.1638412475586
+                1120.029296875,
+                316.5948486328125
             ],
             "bbox": [
-                87,
-                243,
-                152,
-                462
+                1076,
+                266,
+                1163,
+                367
             ],
             "expected_type": "product",
-            "expected_product": "Sprite"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 30,
             "row": 2,
-            "position": 4,
+            "position": 15,
             "center": [
-                184.56764221191406,
-                353.46610260009766
+                1204.0125732421875,
+                314.57579040527344
             ],
             "bbox": [
-                155,
-                244,
-                213,
-                462
+                1166,
+                262,
+                1241,
+                367
             ],
             "expected_type": "product",
-            "expected_product": "Sprite"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 31,
             "row": 2,
-            "position": 5,
+            "position": 16,
             "center": [
-                246.17069244384766,
-                355.53365325927734
+                1221.7018432617188,
+                314.92442321777344
             ],
             "bbox": [
-                217,
-                246,
-                274,
-                464
+                1168,
+                259,
+                1275,
+                369
             ],
             "expected_type": "product",
-            "expected_product": "Sprite"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 32,
-            "row": 2,
-            "position": 6,
+            "row": 3,
+            "position": 1,
             "center": [
-                307.17543029785156,
-                357.4097671508789
+                28.106630325317383,
+                450.8226318359375
             ],
             "bbox": [
-                278,
-                249,
-                336,
-                465
+                0,
+                403,
+                55,
+                497
             ],
             "expected_type": "product",
             "expected_product": "Coca Cola"
         },
         {
             "slot_id": 33,
-            "row": 2,
-            "position": 7,
+            "row": 3,
+            "position": 2,
             "center": [
-                368.54217529296875,
-                360.9073486328125
+                100.67829513549805,
+                457.27569580078125
             ],
             "bbox": [
-                338,
-                248,
-                398,
-                473
-            ],
-            "expected_type": "product",
-            "expected_product": "Sprite"
-        },
-        {
-            "slot_id": 34,
-            "row": 2,
-            "position": 8,
-            "center": [
-                431.8647155761719,
-                363.4342727661133
-            ],
-            "bbox": [
-                401,
-                250,
-                462,
-                475
-            ],
-            "expected_type": "product",
-            "expected_product": "Sprite"
-        },
-        {
-            "slot_id": 35,
-            "row": 2,
-            "position": 9,
-            "center": [
-                496.85821533203125,
-                363.4116897583008
-            ],
-            "bbox": [
-                466,
-                250,
-                527,
-                475
-            ],
-            "expected_type": "product",
-            "expected_product": "Sprite"
-        },
-        {
-            "slot_id": 36,
-            "row": 2,
-            "position": 10,
-            "center": [
-                560.2686462402344,
-                364.3561477661133
-            ],
-            "bbox": [
-                530,
-                254,
-                589,
-                474
+                61,
+                412,
+                140,
+                502
             ],
             "expected_type": "product",
             "expected_product": "Coca Cola"
         },
         {
-            "slot_id": 37,
-            "row": 2,
-            "position": 11,
+            "slot_id": 34,
+            "row": 3,
+            "position": 3,
             "center": [
-                623.9136657714844,
-                367.41539764404297
+                182.33863830566406,
+                460.8214111328125
             ],
             "bbox": [
-                592,
-                254,
-                655,
-                480
+                143,
+                415,
+                220,
+                506
+            ],
+            "expected_type": "product",
+            "expected_product": "Coca Cola"
+        },
+        {
+            "slot_id": 35,
+            "row": 3,
+            "position": 4,
+            "center": [
+                258.9137268066406,
+                462.68946838378906
+            ],
+            "bbox": [
+                226,
+                419,
+                291,
+                505
+            ],
+            "expected_type": "product",
+            "expected_product": "Coca Cola"
+        },
+        {
+            "slot_id": 36,
+            "row": 3,
+            "position": 5,
+            "center": [
+                333.4952697753906,
+                462.31581115722656
+            ],
+            "bbox": [
+                293,
+                417,
+                373,
+                506
+            ],
+            "expected_type": "product",
+            "expected_product": "Mirinda"
+        },
+        {
+            "slot_id": 37,
+            "row": 3,
+            "position": 6,
+            "center": [
+                449.18017578125,
+                462.29493713378906
+            ],
+            "bbox": [
+                404,
+                414,
+                493,
+                510
             ],
             "expected_type": "product",
             "expected_product": "Sprite"
         },
         {
             "slot_id": 38,
-            "row": 2,
-            "position": 12,
+            "row": 3,
+            "position": 7,
             "center": [
-                687.6343078613281,
-                364.56333923339844
+                542.9888763427734,
+                466.94305419921875
             ],
             "bbox": [
-                658,
-                252,
-                716,
-                476
+                497,
+                418,
+                588,
+                515
             ],
             "expected_type": "product",
-            "expected_product": "Coca Cola"
+            "expected_product": "Sprite"
         },
         {
             "slot_id": 39,
-            "row": 2,
-            "position": 13,
+            "row": 3,
+            "position": 8,
             "center": [
-                750.0475769042969,
-                363.1222229003906
+                642.1778869628906,
+                462.9190673828125
             ],
             "bbox": [
-                720,
-                250,
-                779,
-                475
-            ],
-            "expected_type": "product",
-            "expected_product": "Pepsi"
-        },
-        {
-            "slot_id": 40,
-            "row": 2,
-            "position": 14,
-            "center": [
-                812.5754699707031,
-                365.7072448730469
-            ],
-            "bbox": [
-                782,
-                253,
-                842,
-                477
-            ],
-            "expected_type": "product",
-            "expected_product": "Coca Cola"
-        },
-        {
-            "slot_id": 41,
-            "row": 2,
-            "position": 15,
-            "center": [
-                875.1381530761719,
-                373.7115020751953
-            ],
-            "bbox": [
-                844,
-                260,
-                905,
-                486
-            ],
-            "expected_type": "product",
-            "expected_product": "Pepsi"
-        },
-        {
-            "slot_id": 42,
-            "row": 2,
-            "position": 16,
-            "center": [
-                939.2637023925781,
-                374.7007293701172
-            ],
-            "bbox": [
-                908,
-                260,
-                970,
-                489
-            ],
-            "expected_type": "product",
-            "expected_product": "Mirinda"
-        },
-        {
-            "slot_id": 43,
-            "row": 2,
-            "position": 17,
-            "center": [
-                1004.0549011230469,
-                375.89881896972656
-            ],
-            "bbox": [
-                973,
-                261,
-                1034,
-                490
-            ],
-            "expected_type": "product",
-            "expected_product": "Pepsi"
-        },
-        {
-            "slot_id": 44,
-            "row": 2,
-            "position": 18,
-            "center": [
-                1068.4202880859375,
-                376.12867736816406
-            ],
-            "bbox": [
-                1038,
-                260,
-                1098,
-                491
+                596,
+                407,
+                687,
+                518
             ],
             "expected_type": "product",
             "expected_product": "Fanta"
         },
         {
-            "slot_id": 45,
-            "row": 2,
-            "position": 19,
+            "slot_id": 40,
+            "row": 3,
+            "position": 9,
             "center": [
-                1132.8187255859375,
-                378.7787628173828
+                741.7566833496094,
+                466.2594299316406
             ],
             "bbox": [
-                1102,
-                264,
-                1163,
-                493
+                694,
+                409,
+                788,
+                523
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Fanta"
+        },
+        {
+            "slot_id": 41,
+            "row": 3,
+            "position": 10,
+            "center": [
+                848.2720642089844,
+                483.26280212402344
+            ],
+            "bbox": [
+                814,
+                435,
+                882,
+                530
+            ],
+            "expected_type": "product",
+            "expected_product": "Coca Cola"
+        },
+        {
+            "slot_id": 42,
+            "row": 3,
+            "position": 11,
+            "center": [
+                916.9505920410156,
+                483.4263153076172
+            ],
+            "bbox": [
+                886,
+                435,
+                947,
+                531
+            ],
+            "expected_type": "product",
+            "expected_product": "Fanta"
+        },
+        {
+            "slot_id": 43,
+            "row": 3,
+            "position": 12,
+            "center": [
+                985.8794250488281,
+                486.0762481689453
+            ],
+            "bbox": [
+                951,
+                439,
+                1019,
+                532
+            ],
+            "expected_type": "product",
+            "expected_product": "Coca Cola"
+        },
+        {
+            "slot_id": 44,
+            "row": 3,
+            "position": 13,
+            "center": [
+                1057.8510437011719,
+                489.2985076904297
+            ],
+            "bbox": [
+                1022,
+                441,
+                1093,
+                537
+            ],
+            "expected_type": "product",
+            "expected_product": "Coca Cola"
+        },
+        {
+            "slot_id": 45,
+            "row": 3,
+            "position": 14,
+            "center": [
+                1140.918212890625,
+                501.72784423828125
+            ],
+            "bbox": [
+                1103,
+                460,
+                1178,
+                542
+            ],
+            "expected_type": "product",
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 46,
-            "row": 2,
-            "position": 20,
+            "row": 4,
+            "position": 1,
             "center": [
-                1197.6136474609375,
-                380.9967346191406
+                83.45832824707031,
+                626.7927551269531
             ],
             "bbox": [
-                1167,
-                266,
-                1227,
-                495
+                18,
+                573,
+                148,
+                680
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Fanta"
         },
         {
             "slot_id": 47,
-            "row": 2,
-            "position": 21,
+            "row": 4,
+            "position": 2,
             "center": [
-                1260.75732421875,
-                380.7853698730469
+                220.9686279296875,
+                630.1473388671875
             ],
             "bbox": [
-                1231,
-                266,
-                1289,
-                495
+                164,
+                574,
+                277,
+                685
             ],
             "expected_type": "product",
-            "expected_product": "7up"
+            "expected_product": "Mirinda"
         },
         {
             "slot_id": 48,
-            "row": 2,
-            "position": 22,
+            "row": 4,
+            "position": 3,
             "center": [
-                1324.895751953125,
-                380.2623291015625
+                335.0451354980469,
+                636.0093383789062
             ],
             "bbox": [
-                1292,
-                263,
-                1357,
-                497
+                288,
+                580,
+                381,
+                691
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Fanta"
         },
         {
             "slot_id": 49,
-            "row": 3,
-            "position": 1,
+            "row": 4,
+            "position": 4,
             "center": [
-                24.463211059570312,
-                615.4481048583984
+                415.553466796875,
+                662.9656982421875
             ],
             "bbox": [
-                0,
-                498,
-                48,
-                732
+                386,
+                629,
+                444,
+                696
             ],
             "expected_type": "product",
             "expected_product": "Coca Cola"
         },
         {
             "slot_id": 50,
-            "row": 3,
-            "position": 2,
+            "row": 4,
+            "position": 5,
             "center": [
-                84.51664924621582,
-                618.2218933105469
+                483.35491943359375,
+                663.7012329101562
             ],
             "bbox": [
-                53,
-                502,
-                115,
-                733
+                447,
+                629,
+                519,
+                698
             ],
             "expected_type": "product",
-            "expected_product": "Coca Cola"
+            "expected_product": "Sprite"
         },
         {
             "slot_id": 51,
-            "row": 3,
-            "position": 3,
+            "row": 4,
+            "position": 6,
             "center": [
-                152.05502319335938,
-                618.5523376464844
+                649.3510437011719,
+                652.5001220703125
             ],
             "bbox": [
-                120,
-                503,
-                183,
-                733
+                607,
+                604,
+                690,
+                700
+            ],
+            "expected_type": "product",
+            "expected_product": "Sprite"
+        },
+        {
+            "slot_id": 52,
+            "row": 4,
+            "position": 7,
+            "center": [
+                735.2399597167969,
+                676.5222778320312
+            ],
+            "bbox": [
+                693,
+                648,
+                777,
+                704
             ],
             "expected_type": "product",
             "expected_product": "Coca Cola"
         },
         {
-            "slot_id": 52,
-            "row": 3,
-            "position": 4,
-            "center": [
-                221.7781524658203,
-                620.4801025390625
-            ],
-            "bbox": [
-                188,
-                506,
-                255,
-                734
-            ],
-            "expected_type": "product",
-            "expected_product": "Thumbs up"
-        },
-        {
             "slot_id": 53,
-            "row": 3,
-            "position": 5,
+            "row": 4,
+            "position": 8,
             "center": [
-                294.40538024902344,
-                621.7647399902344
+                736.7109069824219,
+                648.2789916992188
             ],
             "bbox": [
-                260,
-                506,
-                328,
-                736
+                695,
+                592,
+                778,
+                704
             ],
             "expected_type": "product",
-            "expected_product": "Thumbs up"
+            "expected_product": "7up"
         },
         {
             "slot_id": 54,
-            "row": 3,
-            "position": 6,
+            "row": 4,
+            "position": 9,
             "center": [
-                366.8594207763672,
-                631.1460266113281
+                847.2676391601562,
+                640.8800048828125
             ],
             "bbox": [
-                334,
-                522,
-                399,
-                740
+                787,
+                576,
+                906,
+                705
             ],
             "expected_type": "product",
-            "expected_product": "Sprite"
+            "expected_product": "Pepsi"
         },
         {
             "slot_id": 55,
-            "row": 3,
-            "position": 7,
+            "row": 4,
+            "position": 10,
             "center": [
-                437.8362731933594,
-                632.6220092773438
+                966.6224060058594,
+                649.0802612304688
             ],
             "bbox": [
-                404,
-                524,
-                470,
-                740
+                912,
+                588,
+                1020,
+                709
             ],
             "expected_type": "product",
-            "expected_product": "Sprite"
+            "expected_product": "Pepsi"
         },
         {
             "slot_id": 56,
-            "row": 3,
-            "position": 8,
+            "row": 4,
+            "position": 11,
             "center": [
-                508.1118927001953,
-                633.2557373046875
+                1087.9796142578125,
+                664.88671875
             ],
             "bbox": [
-                475,
-                525,
-                540,
-                740
+                1031,
+                613,
+                1144,
+                716
             ],
             "expected_type": "product",
             "expected_product": "Sprite"
         },
         {
             "slot_id": 57,
-            "row": 3,
-            "position": 9,
+            "row": 4,
+            "position": 12,
             "center": [
-                577.0130004882812,
-                632.2472229003906
+                1213.7877197265625,
+                676.7511901855469
             ],
             "bbox": [
-                545,
-                524,
-                608,
-                740
+                1147,
+                630,
+                1280,
+                722
             ],
             "expected_type": "product",
-            "expected_product": "Coca Cola"
+            "expected_product": "Fanta"
         },
         {
             "slot_id": 58,
-            "row": 3,
-            "position": 10,
+            "row": 5,
+            "position": 1,
             "center": [
-                647.0415344238281,
-                633.9494934082031
+                837.5888977050781,
+                773.1646423339844
             ],
             "bbox": [
-                614,
-                525,
-                679,
-                742
+                805,
+                756,
+                869,
+                789
             ],
             "expected_type": "product",
             "expected_product": "Coca Cola"
         },
         {
             "slot_id": 59,
-            "row": 3,
-            "position": 11,
+            "row": 6,
+            "position": 1,
             "center": [
-                716.6889953613281,
-                635.9995727539062
+                253.2262954711914,
+                824.6763916015625
             ],
             "bbox": [
-                686,
-                526,
-                747,
-                745
+                217,
+                807,
+                289,
+                841
             ],
             "expected_type": "product",
             "expected_product": "Coca Cola"
         },
         {
             "slot_id": 60,
-            "row": 3,
-            "position": 12,
+            "row": 6,
+            "position": 2,
             "center": [
-                785.0202331542969,
-                641.5481567382812
+                332.5898132324219,
+                806.2879028320312
             ],
             "bbox": [
-                752,
-                530,
-                817,
-                752
+                293,
+                763,
+                372,
+                848
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "7up"
         },
         {
             "slot_id": 61,
-            "row": 3,
-            "position": 13,
+            "row": 6,
+            "position": 3,
             "center": [
-                856.6113586425781,
-                642.3716735839844
+                421.0970458984375,
+                799.0269470214844
             ],
             "bbox": [
-                822,
-                531,
-                891,
-                753
+                376,
+                748,
+                465,
+                849
             ],
             "expected_type": "product",
-            "expected_product": "Fanta"
+            "expected_product": "Sprite"
         },
         {
             "slot_id": 62,
-            "row": 3,
-            "position": 14,
+            "row": 6,
+            "position": 4,
             "center": [
-                927.5982971191406,
-                640.2889404296875
+                507.26666259765625,
+                797.0654602050781
             ],
             "bbox": [
-                896,
-                531,
-                958,
-                749
+                468,
+                745,
+                545,
+                848
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Sprite"
         },
         {
             "slot_id": 63,
-            "row": 3,
-            "position": 15,
+            "row": 6,
+            "position": 5,
             "center": [
-                996.4562377929688,
-                643.6356201171875
+                592.2404174804688,
+                799.6904907226562
             ],
             "bbox": [
-                963,
-                533,
-                1029,
-                753
+                549,
+                749,
+                635,
+                849
             ],
             "expected_type": "product",
             "expected_product": "Pepsi"
         },
         {
             "slot_id": 64,
-            "row": 3,
-            "position": 16,
+            "row": 6,
+            "position": 6,
             "center": [
-                1066.427734375,
-                645.9141845703125
+                680.125244140625,
+                805.4132385253906
             ],
             "bbox": [
-                1033,
-                536,
-                1099,
-                755
+                639,
+                755,
+                720,
+                854
             ],
             "expected_type": "product",
-            "expected_product": "Fanta"
+            "expected_product": "Pepsi"
         },
         {
             "slot_id": 65,
-            "row": 3,
-            "position": 17,
+            "row": 6,
+            "position": 7,
             "center": [
-                1133.9852294921875,
-                644.8354187011719
+                760.0667419433594,
+                791.2964782714844
             ],
             "bbox": [
-                1104,
-                538,
-                1163,
-                751
+                728,
+                758,
+                792,
+                824
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 66,
-            "row": 3,
-            "position": 18,
+            "row": 7,
+            "position": 1,
             "center": [
-                1196.404296875,
-                644.0069885253906
+                887.705810546875,
+                855.9837646484375
             ],
             "bbox": [
-                1168,
-                537,
-                1223,
-                750
+                851,
+                835,
+                923,
+                876
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 67,
-            "row": 3,
-            "position": 19,
+            "row": 7,
+            "position": 2,
             "center": [
-                1258.8364868164062,
-                644.5358276367188
+                987.450439453125,
+                866.3172607421875
             ],
             "bbox": [
-                1229,
-                537,
-                1288,
-                751
+                963,
+                844,
+                1011,
+                888
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 68,
-            "row": 3,
-            "position": 20,
+            "row": 7,
+            "position": 3,
             "center": [
-                1321.07275390625,
-                647.3775939941406
+                1041.9443359375,
+                875.6929931640625
             ],
             "bbox": [
-                1294,
-                539,
-                1347,
-                755
+                1018,
+                864,
+                1065,
+                886
             ],
             "expected_type": "product",
-            "expected_product": "Pepsi"
+            "expected_product": "Coca Cola"
         },
         {
             "slot_id": 69,
-            "row": 3,
-            "position": 21,
+            "row": 7,
+            "position": 4,
             "center": [
-                1346.395751953125,
-                649.2823181152344
+                1102.9639892578125,
+                885.4417724609375
             ],
             "bbox": [
-                1335,
-                539,
-                1357,
-                759
+                1077,
+                875,
+                1128,
+                895
+            ],
+            "expected_type": "product",
+            "expected_product": "Coca Cola"
+        },
+        {
+            "slot_id": 70,
+            "row": 7,
+            "position": 5,
+            "center": [
+                1154.773681640625,
+                884.1900024414062
+            ],
+            "bbox": [
+                1128,
+                872,
+                1181,
+                895
+            ],
+            "expected_type": "product",
+            "expected_product": "Coca Cola"
+        },
+        {
+            "slot_id": 71,
+            "row": 7,
+            "position": 6,
+            "center": [
+                1209.0279541015625,
+                882.8360595703125
+            ],
+            "bbox": [
+                1183,
+                870,
+                1234,
+                894
+            ],
+            "expected_type": "product",
+            "expected_product": "Coca Cola"
+        },
+        {
+            "slot_id": 72,
+            "row": 7,
+            "position": 7,
+            "center": [
+                1262.2646484375,
+                887.563720703125
+            ],
+            "bbox": [
+                1244,
+                876,
+                1279,
+                899
             ],
             "expected_type": "product",
             "expected_product": "Coca Cola"

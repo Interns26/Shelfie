@@ -14,7 +14,12 @@ app = FastAPI(title="Retail Shelf Intelligence API")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:4173"],
+    allow_origins=[
+        "http://localhost:4173",
+        "http://localhost:4174",
+        "http://127.0.0.1:4173",
+        "http://127.0.0.1:4174",
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
