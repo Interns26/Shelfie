@@ -27,3 +27,18 @@ cropped_products/
 annotated_images/
 samples/
 
+
+
+
+
+
+
+
+
+
+
+.venv/
+.venv312/
+venv/
+__pycache__/
+*.pyc

@@ -1,7 +1,6 @@
 # Copyright (c) UWorx Services 2026. All Rights Reserved. The information contained herein is proprietary and confidential. This proprietary and confidential information, either in whole or in part, shall not be used for any purpose unless permitted by the terms of a valid license agreement.
 from datetime import datetime
 from typing import List, Optional
-import subprocess
 import sys
 import json
 from pathlib import Path
@@ -9,6 +8,8 @@ from pathlib import Path
 from fastapi import FastAPI, File, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
+
+from app.roboflow_client import normalize_predictions, run_detergent_workflow
 
 app = FastAPI(title="Retail Shelf Intelligence API")
 
@@ -206,9 +207,31 @@ async def analyze_shelf(
 
     # run the existing detector script (synchronous)
     try:
-        subprocess.run([sys.executable, str(DETECTOR_DIR / "main.py")], cwd=str(DETECTOR_DIR), check=True)
-    except subprocess.CalledProcessError as exc:
-        raise HTTPException(status_code=500, detail=f"Detector failed: {exc}")
+        reference_result = run_detergent_workflow(ref_path)
+        current_result = run_detergent_workflow(cur_path)
+
+        if str(DETECTOR_DIR) not in sys.path:
+            sys.path.insert(0, str(DETECTOR_DIR))
+
+        from pipeline.comparison import ComparisonEngine
+        from pipeline.roboflow_slots import build_slot_map
+
+        reference = build_slot_map(
+            normalize_predictions(reference_result),
+            ref_path,
+            REFERENCE_JSON,
+            reference=True,
+        )
+        current = build_slot_map(
+            normalize_predictions(current_result),
+            cur_path,
+            CURRENT_SLOTS_JSON,
+        )
+
+        comparison = ComparisonEngine().compare(reference, current)
+        ComparisonEngine().save(comparison, COMPARISON_JSON)
+    except Exception as exc:
+        raise HTTPException(status_code=500, detail=f"Detergent analysis failed: {exc}") from exc
 
     # build results from detector outputs
     detector_results = build_results_from_detector()

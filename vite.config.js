@@ -10,7 +10,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         // For local development (no Docker), proxy to localhost backend
-        target: 'http://localhost:8000',
+        target: 'http://localhost:8001',
         changeOrigin: true,
         secure: false,
       },

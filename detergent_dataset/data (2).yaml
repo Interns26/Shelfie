@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 4
+names: ['bonus', 'bonus_active', 'brite', 'express']
+
+roboflow:
+  workspace: esha-mubashir-uworx-co-uk
+  project: shelfie-detergentt
+  version: 1
+  license: Private
+  url: https://app.roboflow.com/esha-mubashir-uworx-co-uk/shelfie-detergentt/1
